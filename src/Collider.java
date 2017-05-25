@@ -49,12 +49,16 @@ public class Collider {
 	
 	public static void main(String[] args) {
 		Collider col = new Collider();
-		col.collide("hackathon", 0);
+		col.collide("3CA848", 0);
 		
+		
+		
+		/*
 		String s1 = "hackathon1054B98F9";
 		String s2 = "hackathon10554FC70";
 		
 		print(col.testString(s1,s2).toString());
+		*/
 	}
 
 	private Boolean testString(String s1, String s2){
