@@ -41,12 +41,6 @@ public class Collider {
 		}
 	}
 	
-	
-	public static void print(String s){
-		System.out.println(s);
-	}
-	
-	
 	public static void main(String[] args) {
 		
 		Scanner MyScanner = new Scanner(System.in);
@@ -60,8 +54,12 @@ public class Collider {
 			int diff = MyScanner.nextInt();
 			collider.collide(prefix, diff);
 		}
-		
-		
+	}
+	
+	
+	
+	public static void print(String s){
+		System.out.println(s);
 	}
 
 	private Boolean testString(String s1, String s2){
