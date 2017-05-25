@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -47,10 +49,21 @@ public class Collider {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		
 		Scanner MyScanner = new Scanner(System.in);
 		Collider collider = new Collider();
+		Process proc = Runtime.getRuntime().exec("java -jar BlockChainClient.jar");
+		System.out.println(proc.isAlive());
+		Class cl = proc.getClass();
+		proc.waitFor();
+		
+		
+		
+		for (Object c : cl.getAnnotations()){
+			System.out.println(c.toString());
+		}
+
 		
 		while(true){
 			print("What is the Prefix?");
