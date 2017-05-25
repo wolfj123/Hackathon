@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Collider {
 	
@@ -13,11 +14,15 @@ public class Collider {
 	
 	
 	public void collide(String prefix, int difficulty){
+		collide(prefix,difficulty, "");
+	}
+	
+	public void collide(String prefix, int difficulty, String init){
 		hasher.setDifficulty(difficulty);
 		Map<String,String> map = new HashMap<String,String>();
 		
 		boolean foundMatch = false;
-		String input=prefix+id;
+		String input=prefix+id+init;
 		String output="";
 		
 		while(!foundMatch){
@@ -37,20 +42,26 @@ public class Collider {
 	}
 	
 	
-	public double getBirthday(int length){
-		return Math.pow(2, Math.pow(16,length));
-	}
-	
-	
 	public static void print(String s){
 		System.out.println(s);
 	}
 	
 	
 	public static void main(String[] args) {
-		Collider col = new Collider();
-		col.collide("3CA848", 0);
-	
+		
+		Scanner MyScanner = new Scanner(System.in);
+		Collider collider = new Collider();
+		
+		while(true){
+			print("What is the Prefix?");
+			String prefix = MyScanner.next();
+			
+			print("What is the Difficulty?");
+			int diff = MyScanner.nextInt();
+			collider.collide(prefix, diff);
+		}
+		
+		
 	}
 
 	private Boolean testString(String s1, String s2){
