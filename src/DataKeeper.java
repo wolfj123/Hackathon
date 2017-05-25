@@ -1,11 +1,11 @@
 
-public class DataKeeper {
+public class DataKeeper implements Comparable{
 	
 	private String orig;
 	private String ans;
 	private SecretHash hash;
 	
-	public DataKeeper (string orig){
+	public DataKeeper (String orig){
 		this.orig = orig;
 		hash = new SecretHash();
 		hash.setDifficulty(1);
@@ -24,5 +24,16 @@ public class DataKeeper {
 	public void setOrig(String orig) {
 		this.orig = orig;
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+	
+	
 
 }
